@@ -1,0 +1,18 @@
+# environment
+.env
+
+# data files
+data/
+
+# jupyter checkpoints
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# notes
+.notes.md
+
+# dbt
+transforms/target/
+transforms/dbt_packages/
+transforms/logs/
