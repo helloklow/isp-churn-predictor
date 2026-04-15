@@ -14,6 +14,11 @@ SELECT
     avg_upload,
     over_download_limit,
     is_month_to_month,
-    churned
+    churned,
+
+    -- Engineered features
+    has_tv + has_movies                                    AS addon_count,
+    ROUND(avg_download / NULLIF(avg_upload, 0), 2)        AS download_upload_ratio,
+    CASE WHEN avg_bill = 0 THEN 1 ELSE 0 END              AS is_zero_bill
 
 FROM base
